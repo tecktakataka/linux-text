@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ -f $1 ]
+  then
+    if [ -r $1 ]
+    then
+      cat $1
+    else 
+      echo "アクセス権がありません!"
+    fi
+  else
+    echo "ファイルが存在しません!"
+fi

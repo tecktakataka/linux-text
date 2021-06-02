@@ -1,0 +1,34 @@
+#!/bin/bash
+
+clear
+sleep 2
+
+line1=("W" "a" "k" "e" " " "u" "p" "," " " "N" "e" "o" ".")
+line2=("M" "a" "t" "r" "i" "x" " " "h" "a" "s" " " "y" "o" "u" ".")
+line3=("Knock, " "knock.")
+
+sleepreset(){
+  sleep 2
+  reset
+  sleep 2
+}
+
+for ((i=0; i<${#line1[@]}; i++))
+do
+  echo -n "${line1[i]}"; sleep 0.1
+done
+
+sleepreset
+
+for ((i=0; i<${#line2[@]}; i++))
+do
+  echo -n "${line2[i]}"; sleep 0.1
+done
+
+sleepreset
+
+echo -n "Knock,"; sleep 0.3
+echo -n "knock."; sleep 0.3
+
+sleepreset
+
