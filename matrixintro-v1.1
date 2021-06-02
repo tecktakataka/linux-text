@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #! 外部ファイル(モジュール)「resetsleep」の読み込み
-source /home/taka/linux-text/shell-env/resetsleep 
+source $(echo $(which resetsleep))
 
 clear
 sleep 2
