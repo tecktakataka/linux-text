@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# エイリアスに「google」を追加
+echo "alias google='gio open https://www.google.com'" >> ~/.bashrc
+# エイリアスに「github」を追加
+echo "alias github='gio open https://www.github.com'" >> ~/.bashrc
+# 設定を直ちに反映させる
+source ~/.bashrc
