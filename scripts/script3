@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo -n 'VAR1: '
 read VAR1
 echo -n 'VAR2: '
@@ -6,12 +8,10 @@ read VAR2
 if [ $VAR1 -eq $VAR2 ]
 then
   echo 'VAR1 equal VAR2'
+elif [ $VAR1 -gt $VAR2 ]
+then
+  echo 'VAR1 gt VAR2'
 else
-  if [ $VAR1 -gt $VAR2 ]
-  then
-    echo 'VAR1 gt VAR2'
-  else
-    echo 'VAR2 gt VAR1'
-  fi
+  echo 'VAR2 gt VAR1'
 fi
 

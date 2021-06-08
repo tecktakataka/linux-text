@@ -1,0 +1,15 @@
+#!/bin/bash
+while true
+  do
+    echo -n VAR1:
+    read VAR1
+# if文の-zオプション -> 文字列長が0以上なら真。
+    if [ -z $VAR1 ]
+      then
+        echo "値が入力されていません!"
+        continue
+    fi
+    break
+done
+
+echo "$VAR1と入力されました。"
