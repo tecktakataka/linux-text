@@ -1,7 +1,0 @@
-#!/bin/bash
-
-for i in 佐藤 田中 中村 矢作 植松
-do
-  echo "私の名前は$iです。"
-done
-

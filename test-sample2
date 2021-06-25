@@ -1,8 +1,0 @@
-#!/bin/bash
-
-if test -f $1 ;
-  then
-    cat $1
-  else
-    echo "ファイルが存在しません"
-fi
