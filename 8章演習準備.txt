@@ -1,0 +1,22 @@
+1. /etc/gdm/custom.confの変更  ←覚える　	ls /etc/gdm/custom.confさきに確認をしてからvi　
+
+  [security]
+  DisallowTCP=false    ← この行を追加
+
+2. ファイアーウォールの設定
+
+  # firewall-cmd --add-port=6000/tcp --permanent
+  # firewall-cmd --reload
+
+
+
+1. VNCサーバのインストール
+
+  # yum install tigervnc-server
+
+2. ファイアーウォールの設定
+
+  # firewall-cmd --add-service=vnc-server --permanent
+  # firewall-cmd --reload
+
+3. WindowsにVNC-Viewerをインストール
