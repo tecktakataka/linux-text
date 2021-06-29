@@ -1,0 +1,79 @@
+9章
+
+グループ入っていないからログインできない
+usermod
+
+ーーーーーーーーーー
+* * * * * date >> cron-date
+
+
+
+ーーーーーーーーーー
+* * * * * : １分毎
+1 * * * * : 毎時１分に実行
+* 1 * * * : 毎日１時に実行
+* * 1 * * : 毎月１日に実行
+* * * 1 * : 毎年１月
+* * * * 1 : 曜日(0-7、0:日、1:月、金:7)
+ーーーーーーーーーー
+/2 * * * *：２分毎
+* 3,5 * * *：3時、5時に実行
+ーーーーーーーーーー
+
+分	0-59
+時	0-23
+日	1-31
+月	1-12
+曜日	0-7 (0または7は日曜日）
+0=日、1=月、2=火、3=水、4=木、5=金、6=土、7=日
+
+
+ーーーーーーーーーー
+
+
+at 16:00 at_date
+>date > at_date
+>pwd > at_date
+
+ctrl+D
+
+#/etc/cron.deny
+
+irie →ユーザ名
+
+wq
+
+そのユーザは、
+crontab -e 開けない
+
+#/etc/cron.allow
+
+irie
+
+wq
+
+denyにあってもallowにあればcrontab -e　は実行できる
+
+
+locale
+echo $LANG
+
+LC_ALLが設定されたら個別に設定できなくなる
+初期は、設定されていない
+
+echo $LC_ALL
+
+環境変数（LC_TIME）の変更
+$echo $LC_TIME
+$export LC_TIME=zh_TW
+$echo $LC_TIME
+$locale
+
+日本語以外の標準出力を確認
+$local | grep LC_MESSAGES : 文字コード確認
+$ls aaa  ：日本語にてファイルが無いと表示
+$echo $LC_MESSAGES=C
+$export LC_MESSAGES=C
+$ls aaa　→日本語以外で表示
+$echo $LC_MESSAGES=C
+
