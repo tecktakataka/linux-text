@@ -1,0 +1,17 @@
+Firewalld を有効の場合は、NTPサービスの許可
+firewall-cmd --add-service=ntp
+
+firewall-cmd --list-all
+systemctl status ntpd.service
+
+-------------------------
+
+サーバ
+data コマンドで時間を変更する
+ip addr
+IPアドレスを伝える
+systemctl start ntpd.service
+
+クライアント
+systemctl stop ntpd.service
+ntpdate 192.168.19.〇〇
