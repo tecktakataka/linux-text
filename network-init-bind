@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# 初期設定開始の案内
+
+echo -e "\n This is the script for the initial configuration of the bind" 
+
+echo -e "\n You need to have 'root' permission to execute this script." 
+
+# 管理者権限があるかどうかの確認
+while : 
+
+do
+  echo -en "\n Are you 'root' user? Or, Do you have the 'root' permission?(y/n): " ; read is_root ; echo -en "\n"
+  case $is_root in
+    'y'|'yes'|'YES'|'Yes') \ 
+       sudo echo " root check OK." ; return_val=$?
+         if [ $return_val -eq 0 ] ; then :
+         else exit 0
+         fi
+       echo -e "\n Continue with the initial setup. " ; break ;;
+    'n'|'no'|'NO'|'No')  echo -e "\n Execute 'su -' command to be 'root' user, or Arrow this user to execute the command for 'root' user. \n" ; exit 0 ;;
+    *)  echo -e "\n Please enter 'yes' or 'no'.\n";;
+  esac
+done
+
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo -e "\n Initializing the bind settings." 
+echo -e "\n Please wait until the process is finished.\n" 
+
+# BIND本体のインストール
+sudo yum -y install bind && \
+# chrootのインストール
+sudo yum -y install bind-chroot && \
+# クライアントツール(digコマンド等)をインストール
+sudo yum -y install bind-utils && \
+
+# named-chrootを起動
+sudo systemctl start named-chroot.service && \
+# named-chrootの自動起動を有効化
+sudo systemctl enable named-chroot.servece && \
+
+# firewallにDNSサービスの利用を許可
+sudo firewall-cmd --permanent --add-service=dns && \
+# 設定を反映させるためfirewallをリロード
+sudo firewall-cmd --reload && \
+
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+echo -e -n "\n"
+# 確認のため現在の設定を表示
+
+# named-chrootの状態を表示
+sudo systemctl status named-chroot.service ; \
+# firewallにDNSサービスの利用が許可されているか確認
+sudo firewall-cmd --list-service
+
+echo -e -n "\n"
+echo -e "\n bind settings are now complete!\n"
