@@ -1,0 +1,4 @@
+1.仮想プリンタの追加
+
+  # yum install epel-release.noarch  ←リポジトリの追加
+  # yum install cups-pdf            ←cups-pdfのインストール
