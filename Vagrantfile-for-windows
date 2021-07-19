@@ -3,7 +3,7 @@
 script = <<SCRIPT
 systemctl stop firewalld.service ; \
 yum -y install bind bind-chroot bind-utils && \
-yum -y install httpd tree tmux && \
+yum -y install httpd vim tree tmux && \
 systemctl start named-chroot.service && \
 systemctl enable named-chroot.service && \
 systemctl start firewalld.service && \
@@ -32,7 +32,7 @@ Vagrant.configure("2") do |config|
     server = "server-#{i}"
     # hostname変数に1~4を代入
     hostname = "#{user}-#{i}"
-    # ip_address 変数に"192.168.99.176~179"を代入
+    # ip_address変数に"192.168.99.176~179"を代入
     ip_address = "192.168.19.#{class_number.to_i * 4 + 124 + (i.to_i - 1)}"
 
     config.vm.define "#{server}" do |server|
