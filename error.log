@@ -1,0 +1,42 @@
+Vagrantfile network settings:
+
+  Address: 192.168.19.(13*4+124+1-1.to_s)
+  Netmask:
+  Error: invalid address: 192.168.19.(13*4+124+1-1.to_s)
+
+Vagrantfile network settings:
+
+  Address: 192.168.19.
+  Netmask:
+  Error: invalid address: 192.168.19.
+
+Vagrantfile network settings:
+
+  Address: 192.168.19.(13*4+124+(1-1)).to_i
+  Netmask:
+  Error: invalid address: 192.168.19.(13*4+124+(1-1)).to_i
+
+Vagrantfile network settings:
+
+  Address: 192.168.19.13*4+124+(1-1)
+  Netmask:
+  Error: invalid address: 192.168.19.13*4+124+(1-1)
+
+Vagrantfile network settings:
+
+  Address: 192.168.19.13.to_i * 4 + 124 + (1.to_i - 1)
+  Netmask:
+  Error: invalid address: 192.168.19.13.to_i * 4 + 124 + (1.to_i - 1)
+
+Vagrantfile network settings:
+
+  Address: 192.168.19.13 * 4 + 124 + (1 - 1)
+  Netmask:
+  Error: invalid address: 192.168.19.13 * 4 + 124 + (1 - 1)
+
+Vagrantfile network settings:
+
+  Address: 192.168.19.13 * 4 + 124 + (1 - 1)
+  Netmask:
+  Error: invalid address: 192.168.19.13 * 4 + 124 + (1 - 1)
+
