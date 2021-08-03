@@ -8,22 +8,26 @@ servers=[
   {
     :servername => "server-1",
     :hostname => "#{user}-1",
-    :provision => "config1.sh"
+    :provision => "config1.sh",
+    :network => "network1.sh"
   },
   {
     :servername => "server-2",
     :hostname => "#{user}-2",
-    :provision => "config2.sh"
+    :provision => "config2.sh",
+    :network => "network2.sh"
   },
   {
     :servername => "server-3",
     :hostname => "#{user}-3",
-    :provision => "config3.sh"
+    :provision => "config3.sh",
+    :network => "network3.sh"
   },
   {
     :servername => "server-4",
     :hostname => "#{user}-4",
-    :provision => "config4.sh"
+    :provision => "config4.sh",
+    :network => "network4.sh"
   }
 ]
 
@@ -43,6 +47,8 @@ Vagrant.configure(2) do |config|
       node.vm.provision :shell, "path" => "init.sh"
       # 各サーバー毎の設定スクリプトを実行
       node.vm.provision :shell, "path" => machine[:provision]
+      # 各サーバー毎のネットワーク設定スクリプトを実行
+      # node.vm.provision :shell, "path" => machine[:network]
     end
   end
 end
