@@ -7,7 +7,7 @@
 # インストールするもの -> BIND, Samba
 
 # bind関連とsambaをインストール
-yum -y install bind bind-chroot bind-utils samba　&& \
+yum -y install bind bind-chroot bind-utils samba && \
 # bind(chroot)を起動
 systemctl start named-chroot.service && \
 # bind(chroot)を有効化

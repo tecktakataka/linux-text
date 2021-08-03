@@ -9,7 +9,7 @@
 # インストールするもの -> Apache, BIND
 
 # bind関連とApacheをインストール
-yum -y install bind bind-chroot bind-utils　httpd && \
+yum -y install bind bind-chroot bind-utils httpd && \
 # bind(chroot)を起動
 systemctl start named-chroot.service && \
 # bind(chroot)を有効化
